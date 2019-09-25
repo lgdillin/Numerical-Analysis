@@ -1,0 +1,22 @@
+function [x1, x2, errflag] = quadroot(a,b,c)
+    % function [x1, x2, errflag] = quadroot(a,b,c)
+    %
+    % RETURNS:
+    % x1: The first root
+    % x2: The second root
+    %
+    % Paramters:
+    % a: real number
+    % b: real number
+    % c: real number
+    
+    disc = (b * b) - 4 * a * c;
+    
+    if(disc < 0) % Complex Roots
+        error('complex roots!')
+    elseif(disc == 0) % Duplicate roots
+        
+    else % Two unique, real roots
+        disp('')
+    end
+end
