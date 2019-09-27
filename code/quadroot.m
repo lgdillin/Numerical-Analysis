@@ -1,11 +1,13 @@
 function [x1, x2, errflag] = quadroot(a,b,c)
     % function [x1, x2, errflag] = quadroot(a,b,c)
     %
+	% finds the roots of a quadratic polynomial
+	%
     % RETURNS:
     % x1: The first root
     % x2: The second root
     %
-    % Paramters:
+    % Parameters:
     % a: real number
     % b: real number
     % c: real number
@@ -52,8 +54,5 @@ function [x1, x2, errflag] = quadroot(a,b,c)
         x1 = (-1 * b + sqrt(disc)) / (2 * a);
         x2 = (-1 * b - sqrt(disc)) / (2 * a);
     end
-    
-    % Rescale the values
-    m = 1 / m;
     
 end
