@@ -17,6 +17,9 @@ function [l, r, nf] = bisect(fname, a, b, tol)
     % l: left side of the converged bracketing interval
     % r: right side of the converged bracketing interval
     % nf: the total number of function evaluations of fname
+    %
+    % Note: if nf == -1, then the method failed to converge to tol
+    % in 1e6 iterations
     
     if(b > a)
         error('bad interval')
@@ -51,6 +54,11 @@ function [l, r, nf] = bisect(fname, a, b, tol)
             b = p0;
         end
         nf += 1;
+        
+        if(nf > 1e6)
+            nf = -1;
+            break
+        end
     end
     l = a;
     r = b;

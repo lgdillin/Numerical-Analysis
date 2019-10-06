@@ -7,16 +7,13 @@ function [x, nf] = secant(fname, x0, x1, tol)
     %
     % inputs:
     % fname: function to approximate zero of
-    % x0: first x guess
-    % x1: second x guess
+    % x0: 
+    % x1: 
     % tol: tolerance to declare convergence
     % 
     % returns:
     % x: x-value to approximate the zero
     % nf: number of function iterations
-    %
-    % Note: if nf == -1, then the method failed to converge to tol
-    % in 1e6 iterations
     
     f0 = feval(fname, x0);
     f1 = feval(fname, x1);
@@ -35,11 +32,6 @@ function [x, nf] = secant(fname, x0, x1, tol)
         f0 = f1;
         f1 = f(p1);
         nf = nf + 1;
-        
-        if(nf > 1e6)
-            nf = -1;
-            break
-        end
     end
     x = x1;
 end
