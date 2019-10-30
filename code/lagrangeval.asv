@@ -1,0 +1,34 @@
+
+% reference: https://www.cs.uaf.edu/~bueler/nevM.htm
+
+function p = lagrangeval(x, y, w)
+    % function p = lagrangeval(x, y, w)
+    %
+    % explain
+    %
+    % returns:
+    % p: a vector of interpolated values 1 through k
+    %
+    % inputs:
+    % x: a vector of the x-components (nodes) of the knots
+    % y: a vector of the y-components of the knots
+    % w: a vector of points to evaluate the function at
+    
+    n = length(x);
+    wl = length(w);
+    p = 1:wl;
+    
+    % create the table for the Q matrix
+    q = zeros(n, n);
+    q(:,1) = y; % populates 1st column of Q with y values (per Neville's method)
+    
+    for k = 1 : wl;
+        for i = 1 : n
+            for j = 1 : i
+                numerator = (x(k) - x(i-j)) * q(i, j-1) - (x(k) - x(i)) * q(i-1, j-1);
+                q(i,j) = numerator / (x(i) - x(i-j));
+            end
+        end
+        p
+    end
+end
