@@ -1,14 +1,17 @@
 
-% reference: https://www.cs.uaf.edu/~bueler/nevM.htm
+
 
 function p = lagrangeval(x, y, w)
     % function p = lagrangeval(x, y, w)
     %
-    % explain
+    % produces a lagrange interpolating polynomial of degree at most n
+    % (where n is the number of knots)
+    % and evaluates the interpolating polynomial at each value provided
+    % by the vector w
     %
     % returns:
-    % p: a vector of approximated values of the interpolating function
-    %    evaluated at a set of points in w.
+    % p: a vector of the approximated values of the interpolating function
+    %    evaluated at a set of inputs given by w.
     %
     % inputs:
     % x: a vector of the x-components (nodes) of the knots
