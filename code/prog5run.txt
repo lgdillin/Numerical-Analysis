@@ -1,0 +1,24 @@
+
+w =
+
+  Columns 1 through 13
+
+    0.3333    0.1276    0.0569    0.0402    0.0467    0.0651    0.0910    0.1229    0.1602    0.2026    0.2501    0.3026    0.3601
+
+  Columns 14 through 21
+
+    0.4226    0.4901    0.5626    0.6401    0.7226    0.8101    0.9026    1.0001
+
+ 
+  h is the time step used by both methods
+  #f is the number of function evals required for the given method
+  error is the absolute error at t=1 for the given method
+ 
+                    Euler        rk4  
+   h      #f     error        #f    error
+                                   
+5.0e-02	  20	2.5e-03		  80	8.3e-05
+
+                                   
+                                   
+                                   
